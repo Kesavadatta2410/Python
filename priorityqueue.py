@@ -1,0 +1,22 @@
+from queue import PriorityQueue
+q = PriorityQueue()
+q.put((2, 50))
+q.put((3, 10))
+q.put((4, 1))
+q.put((5, 20))
+q.put((1, 30))
+pq = list(q.queue)
+print("Q before delete:",pq)
+pq.remove((2,50))
+print("List Q",pq)
+q = PriorityQueue()
+for item in pq:
+    q.put(item)
+print("Prior Q:",q.queue)
+li = list(q.queue)
+print("Queue",li)
+for k in li:
+    print("Queue it keys",k[1])
+print('No. of Items in queue :', q.qsize())
+print('Is queue empty :', q.empty())
+print('Is queue full :', q.full())
